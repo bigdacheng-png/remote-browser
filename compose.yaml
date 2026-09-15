@@ -1,0 +1,15 @@
+name: remote-browser
+services:
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
+    environment:
+      PUID: "${BROWSER_UID:-1000}"
+      PGID: "${BROWSER_GID:-1000}"
+      TZ: Asia/Shanghai
+      LC_ALL: zh_CN.UTF-8
+    volumes:
+      - ./data:/config
+    ports:
+      - "127.0.0.1:3001:3001"
+    shm_size: "1gb"
+    restart: unless-stopped
