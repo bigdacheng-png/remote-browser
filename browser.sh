@@ -28,8 +28,7 @@ case "${1:-start}" in
     docker compose up -d
     echo ''
     echo '容器已启动，首次初始化可能需要约一分钟。'
-    echo '访问地址：https://localhost:3001'
-    echo '本地使用自签名证书；首次打开时，选择高级并继续访问 localhost。'
+    echo '访问地址：http://localhost:3001'
     echo '查看日志：sh browser.sh logs'
     echo '停止服务：sh browser.sh stop（保留浏览器数据）'
     ;;
