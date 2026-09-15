@@ -11,6 +11,7 @@ services:
       - ./data:/config
     ports:
       # 容器内 3000 是纯 HTTP,3001 是 HTTPS;映射到 3000 即可直接 http 访问
-      - "127.0.0.1:3001:3000"
+      # 绑定 0.0.0.0,允许局域网其他设备访问
+      - "3001:3000"
     shm_size: "1gb"
     restart: unless-stopped
